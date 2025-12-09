@@ -1,6 +1,6 @@
 package my.example;
 
-import my.example.testinfra.FakeContext;
+import dev.restate.sdk.fake.FakeContext;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

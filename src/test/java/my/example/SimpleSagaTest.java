@@ -1,7 +1,7 @@
 package my.example;
 
-import my.example.testinfra.ContextExpectations;
-import my.example.testinfra.FakeContext;
+import dev.restate.sdk.fake.ContextExpectations;
+import dev.restate.sdk.fake.FakeContext;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ public class SimpleSagaTest {
         SimpleSaga simpleSaga = new SimpleSaga();
 
         // The no-arg constructor of FakeContext will, by default, execute all ctx.run
-        // In case of failures, the exception is propagated as is.
+        // In case of a failure, the exception is propagated as is.
         FakeContext context = new FakeContext();
 
         IllegalStateException actual = assertThrows(IllegalStateException.class, () -> simpleSaga.doSaga(context));

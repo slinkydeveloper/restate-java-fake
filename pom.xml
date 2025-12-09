@@ -15,16 +15,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
-        <restate.version>2.4.1</restate.version>
+        <restate.version>2.5.0-SNAPSHOT</restate.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>dev.restate</groupId>
-            <artifactId>sdk-api-gen</artifactId>
-            <version>${restate.version}</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>dev.restate</groupId>
             <artifactId>sdk-java-http</artifactId>
@@ -45,8 +39,9 @@
         </dependency>
         <dependency>
             <groupId>dev.restate</groupId>
-            <artifactId>sdk-testing</artifactId>
+            <artifactId>sdk-fake-api</artifactId>
             <version>${restate.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -69,7 +64,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.6.2</version>
                 <configuration>
                     <mainClass>my.example.Greeter</mainClass>
                 </configuration>
@@ -77,7 +72,22 @@
 
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.5.4</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <!-- Setup annotation processor -->
+                        <path>
+                            <groupId>dev.restate</groupId>
+                            <artifactId>sdk-api-gen</artifactId>
+                            <version>${restate.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
             </plugin>
         </plugins>
     </build>
