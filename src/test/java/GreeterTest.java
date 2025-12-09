@@ -1,5 +1,3 @@
-package my.example;
-
 import dev.restate.sdk.fake.FakeContext;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

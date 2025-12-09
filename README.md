@@ -15,5 +15,5 @@ To use the `FakeContext`, add the following dependency:
 
 Example tests:
 
-* [Greeter](./src/main/java/my/example/Greeter.java) and [GreeterTest](./src/test/java/my/example/GreeterTest.java) show a basic example.
-* [SimpleSaga](./src/main/java/my/example/SimpleSaga.java) and [SimpleSagaTest](./src/test/java/my/example/SimpleSagaTest.java) show how to test a saga.
+* [Greeter](./src/main/java/Greeter.java) and [GreeterTest](./src/test/java/GreeterTest.java) show a basic example.
+* [SimpleSaga](./src/main/java/SimpleSaga.java) and [SimpleSagaTest](./src/test/java/SimpleSagaTest.java) show how to test a saga.
