@@ -3,6 +3,8 @@ import dev.restate.sdk.http.vertx.RestateHttpServer;
 import my.example.Greeter;
 import my.example.SimpleSaga;
 
-void main() {
-    RestateHttpServer.listen(Endpoint.bind(new Greeter()).bind(new SimpleSaga()));
+public class Main {
+    public static void main(String[] args) {
+        RestateHttpServer.listen(Endpoint.bind(new Greeter()).bind(new SimpleSaga()));
+    }
 }
